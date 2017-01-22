@@ -1,0 +1,46 @@
+<h1>
+  {{title}}
+</h1>
+
+<!---style bindning for colors -->
+<h2>Style Binding uing 'style.color' directive</h2>
+<!--call the random color property to set the color of this div -->
+<div [style.color]="randomcolor"> I would be styled with different colors dynamically </div>
+<!--attach a click function to this button to set the color dynamically -->
+<button (click)="setColor()"> Set my color </button>
+
+
+<!---style bindning for ngStyle -->
+<h2>Style Binding using 'ngStyle' directive</h2>
+<!--call the style object to style class -->
+<div [ngStyle]="{
+  'color': getRandomColor(),
+  'font-size': font_size,
+  'background-color': background_color
+  }"> I would be styled with different colors dynamically </div>
+<!--attach a click function to this button to set the style dynamically -->
+<input type="text" [(ngModel)]="background_color" placeholder="background_color">
+<input type="text" [(ngModel)]="font_size" placeholder="font_size">
+
+
+
+<!---class binding for ClassName -->
+<h2>Class Binding using 'className' directive</h2>
+<!--call the ngclass object to add a class name to it. -->
+<div [className]="'style1'"> I would be classed using classname</div>
+
+
+<!---class binding for ClassName -->
+<h2>Class Binding using 'className' directive and variable</h2>
+<!--call the ngclass object to add a class name to it. -->
+<div [className]="my_Class"> I would be classed using classname</div>
+<button (click)="toggle_class()">Toggle_class</button>
+
+<!-- class binding using ngclass -->
+<h2> Class Binding using 'ngClass' directive with objects and variables</h2>
+<!--call the classes in the objects and thier value -->
+<div [ngClass]="{'style1': isClass1Visible, 'style2': isClass2Visible}">object of classes</div>
+<!--button to togggle style1 -->
+<button (click)="isClass1Visible = !isClass1Visible;">Toggle style 1</button>
+<!-- button to toggle style2 -->
+<button (click)="isClass2Visible = !isClass2Visible;">Toggle style 2</button>
